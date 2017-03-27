@@ -4,6 +4,7 @@
 
 .jumbotron-home {
     background-image: url(image_path('home-bg.jpg'));
+    min-height: 100%;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
@@ -12,13 +13,13 @@
 .jumbotron-about {
     background-image: url(image_path('about-bg.jpg'));
     background-repeat: no-repeat;
-    background-position: center 85%;
+    background-position: center 94%;
     background-size: cover;
 }
 
 .jumbotron-contact {
     background-image: url(image_path('contact-bg.jpg'));
     background-repeat: no-repeat;
-    background-position: center 75%;
+    background-position: center 73%;
     background-size: cover;
 }
