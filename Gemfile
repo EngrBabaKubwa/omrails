@@ -35,6 +35,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootstrap', '~> 4.0.0.alpha6'
 gem 'devise'
+gem 'activeadmin', '~>1.0.0.pre5'
+gem 'inherited_resources', '~> 1.7'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
