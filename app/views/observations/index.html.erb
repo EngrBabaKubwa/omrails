@@ -1,0 +1,46 @@
+<div class = 'container'>
+  <h1>Observations</h1>
+
+  <table class = 'table'>
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Date</th>
+        <th>Species</th>
+        <th>Saw</th>
+        <th>Heard</th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @observations.each do |observation| %>
+        <tr>
+          <td><%= observation.user.email %></td>
+          <td><%= observation.date %></td>
+          <td><%= observation.species %></td>
+          <% if observation.saw? %>
+            <td><%= 'yes' %></td>
+          <% else %>
+            <td><%= 'no' %></td>
+          <% end %>
+          <% if observation.heard? %>
+            <td><%= 'yes' %></td>
+          <% else %>
+            <td><%= 'no' %></td>
+          <% end %>
+          <% if observation.user == current_user %>
+            <td><%= link_to 'Show', observation %></td>
+            <td><%= link_to 'Edit', edit_observation_path(observation) %></td>
+            <td><%= link_to 'Destroy', observation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <% end %>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <br>
+  <% if user_signed_in? %>
+    <%= link_to 'New Observation', new_observation_path %>
+  <% end %>
+</div>

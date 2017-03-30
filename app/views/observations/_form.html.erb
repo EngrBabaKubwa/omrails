@@ -1,0 +1,75 @@
+<%= form_for(observation) do |f| %>
+  <% if observation.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(observation.errors.count, "error") %> prohibited this observation from being saved:</h2>
+
+      <ul>
+      <% observation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :user_id %>
+    <%= f.text_field :user_id %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :date %>
+    <%= f.date_select :date %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :time %>
+    <%= f.time_select :time %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :conditions %>
+    <%= f.text_area :conditions %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :sunrise %>
+    <%= f.time_select :sunrise %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :sunset %>
+    <%= f.time_select :sunset %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :species %>
+    <%= f.text_area :species %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :saw %>
+    <%= f.check_box :saw %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :heard %>
+    <%= f.check_box :heard %>
+  </div>
+
+  <div class="form-group">
+    <%= f.label :latitude %>
+    <%= f.text_field :latitude %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :longitude %>
+    <%= f.text_field :longitude %>
+  </div>
+
+  <div class="form_group">
+    <%= f.label :notes %>
+    <%= f.text_area :notes, class: 'form-control' %>
+  </div>
+
+    <%= f.submit class: 'btn btn-primary' %>
+<% end %>

@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  date: 2017-03-29
+  time: 2017-03-29 11:57:25
+  conditions: MyText
+  sunrise: 2017-03-29 11:57:25
+  sunset: 2017-03-29 11:57:25
+  species: MyText
+  saw: false
+  heard: false
+  latitude: 1.5
+  longitude: 1.5
+  notes: MyText
+
+two:
+  user: two
+  date: 2017-03-29
+  time: 2017-03-29 11:57:25
+  conditions: MyText
+  sunrise: 2017-03-29 11:57:25
+  sunset: 2017-03-29 11:57:25
+  species: MyText
+  saw: false
+  heard: false
+  latitude: 1.5
+  longitude: 1.5
+  notes: MyText
