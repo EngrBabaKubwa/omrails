@@ -1,16 +1,15 @@
-<div class = 'container'>
+<div class='container'>
+	<h1>Your Account</h1>
+	<p>Name: <%= @user.name %></p>
+	<p>Username: <%= @user.username %></p>
 
   <div class="row">
     <div class="col-md-4">
         <div class="card card-block">
-          <h4 class="card-title">Your Account</h4>
-          <p class="card-text"><%=link_to current_user.username, user_path(current_user.username) %></p>
+          <h4 class="card-title"><%= @user.name %>'s Tweets</h4>
         </div>
     </div>
     <div class = "col-md-8">
-      <% if user_signed_in? %>
-        <%= link_to 'New Tweet', new_tweet_path %>
-      <% end %>
           <% @tweets.each do |tweet| %>
             <%= link_to tweet, class: "card" do%>
               <div class='card-block'>
@@ -22,4 +21,5 @@
       </div>
     </div>
   </div>
+</div>
 </div>
