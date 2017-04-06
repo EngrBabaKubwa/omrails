@@ -5,4 +5,8 @@ class User < ApplicationRecord
 
   has_many :tweets
   has_many :observations
+  has_many :items
+
+  validates :username, presence: true, uniqueness: true, length: { minimum: 6 }
+  validates :name, presence: true
 end

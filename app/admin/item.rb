@@ -1,4 +1,4 @@
-ActiveAdmin.register User do
+ActiveAdmin.register Item do
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
@@ -13,26 +13,6 @@ ActiveAdmin.register User do
 #   permitted
 # end
 
-	permit_params :email, :admin, :name, :username
-
-	form do |f|
-		f.semantic_errors
-		f.inputs do
-			f.input :email
-			f.input :admin
-			f.input :name
-			f.input :username
-		end
-		f.actions
-	end
-
-	index do
-		id_column
-		column :email
-		column :admin
-		column :name
-		column :username
-		actions
-	end
+	permit_params :user, :title, :url, :text
 
 end

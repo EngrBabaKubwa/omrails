@@ -13,5 +13,8 @@ module Omrails
     # -- all .rb files in that directory are automatically loaded.
 
     config.app_generators.scaffold_controller = :scaffold_controller
+    # /config/application.rb
+	config.time_zone = 'Mountain Time (US & Canada)'
   end
 end
+

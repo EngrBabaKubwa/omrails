@@ -1,9 +1,20 @@
 <div class = 'container'>
   <p id="notice"><%= notice %></p>
 
-  <p>
-    <strong>User:</strong>
-    <%= @observation.user %>
+  <div class="row">
+    <div class="col-md-4"><strong>Place: </strong></div>
+    <div class="col-md-4"><strong>Date: </strong><%= @observation.date %></div>
+    <div class="col-md-4"><strong>Time: </strong><%= Time.at(@observation.time).strftime("%H:%M") %></div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-3"><strong>Sunrise: </strong><%= Time.at(@observation.sunrise).strftime("%H:%M") %></div>
+    <div class="col-md-6"><strong>Conditions: </strong><%= @observation.conditions %></div>
+    <div class="col-md-3"><strong>Sunset: </strong><%= Time.at(@observation.sunset).strftime("%H:%M") %></div>
+  </div>
+  
+  <!-- <p>
+    <strong>Place:</strong>
   </p>
 
   <p>
@@ -13,23 +24,23 @@
 
   <p>
     <strong>Time:</strong>
-    <%= @observation.time %>
-  </p>
+    <%= Time.at(@observation.time).strftime("%H:%M") %>
+  </p> -->
 
-  <p>
+  <!-- <p>
     <strong>Conditions:</strong>
     <%= @observation.conditions %>
   </p>
 
   <p>
     <strong>Sunrise:</strong>
-    <%= @observation.sunrise %>
+    <%= Time.at(@observation.sunrise).strftime("%H:%M") %>
   </p>
 
   <p>
     <strong>Sunset:</strong>
-    <%= @observation.sunset %>
-  </p>
+    <%= Time.at(@observation.sunset).strftime("%H:%M") %>
+  </p> -->
 
   <p>
     <strong>Species:</strong>
