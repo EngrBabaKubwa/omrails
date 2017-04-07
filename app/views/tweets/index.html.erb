@@ -17,6 +17,9 @@
             <%= link_to tweet, class: "card" do%>
               <div class='card-block'>
                 <h6 class="card-title"><%= tweet.user.email %></h6>
+                <% if tweet.image.present? %>
+                  <center><%= image_tag tweet.image, class: 'img-fluid' %></center>
+                <% end %>
                 <p class="card-text"><%= tweet.content %></p>
               </div>
             <% end %>
