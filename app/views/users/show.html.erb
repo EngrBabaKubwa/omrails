@@ -6,10 +6,12 @@
     <div class="col-md-4">
         <div class="card card-block">
           <h4 class="card-title"><%= @user.name %>'s Tweets</h4>
-          <% if current_user.following?(@user) %>
-            <p class='card-text'><%= link_to 'Unfollow', unfollow_user_path(@user.username), method: :delete %></p>
-          <% else %>
-            <p class='card-text'><%= link_to 'Follow', follow_user_path(@user.username), method: :post %></p>
+          <% if user_signed_in? %>
+            <% if current_user.following?(@user) %>
+              <p class='card-text'><%= link_to 'Unfollow', unfollow_user_path(@user.username), method: :delete %></p>
+            <% else %>
+              <p class='card-text'><%= link_to 'Follow', follow_user_path(@user.username), method: :post %></p>
+              <% end %>
           <% end %>
         </div>
     </div>
