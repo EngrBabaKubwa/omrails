@@ -11,10 +11,10 @@
     </div>
     <div class = "col-md-8">
       <% if user_signed_in? %>
-        <%= link_to 'New Tweet', new_tweet_path %>
+        <center><%= link_to 'New Tweet', new_tweet_path %></center>
       <% end %>
           <% @tweets.each do |tweet| %>
-            <%= link_to tweet, class: "card" do%>
+            <%= link_to tweet, class: "card" do %>
               <div class='card-block'>
                 <h6 class="card-title"><%= tweet.user.email %></h6>
                 <% if tweet.image.present? %>

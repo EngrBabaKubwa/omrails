@@ -1,7 +1,7 @@
 <div class = 'container'>
   <p id="notice"><%= notice %></p>
 
-  <div class="row">
+ <!--  <div class="row">
     <div class="col-md-4"><strong>Place: </strong></div>
     <div class="col-md-4"><strong>Date: </strong><%= @observation.date %></div>
     <div class="col-md-4"><strong>Time: </strong><%= Time.at(@observation.time).strftime("%H:%M") %></div>
@@ -11,67 +11,75 @@
     <div class="col-md-3"><strong>Sunrise: </strong><%= Time.at(@observation.sunrise).strftime("%H:%M") %></div>
     <div class="col-md-6"><strong>Conditions: </strong><%= @observation.conditions %></div>
     <div class="col-md-3"><strong>Sunset: </strong><%= Time.at(@observation.sunset).strftime("%H:%M") %></div>
+  </div> -->
+  <div class = 'row'>
+  <div class = 'col-md-4'>
+    <p>
+      <strong>Place:</strong>
+    </p>
+
+    <p>
+      <strong>Date:</strong>
+      <%= @observation.date %>
+    </p>
+
+    <p>
+      <strong>Time:</strong>
+      <%= Time.at(@observation.time).strftime("%H:%M") %>
+    </p>
+
+    <p>
+      <strong>Conditions:</strong>
+      <%= @observation.conditions %>
+    </p>
+
+    <p>
+      <strong>Sunrise:</strong>
+      <%= Time.at(@observation.sunrise).strftime("%H:%M") %>
+    </p>
+
+    <p>
+      <strong>Sunset:</strong>
+      <%= Time.at(@observation.sunset).strftime("%H:%M") %>
+    </p>
+
+    <p>
+      <strong>Species:</strong>
+      <%= @observation.species %>
+    </p>
+
+    <p>
+      <strong>Saw:</strong>
+      <%= @observation.saw %>
+    </p>
+
+    <p>
+      <strong>Heard:</strong>
+      <%= @observation.heard %>
+    </p>
+
+    <p>
+      <strong>Latitude:</strong>
+      <%= @observation.latitude %>
+    </p>
+
+    <p>
+      <strong>Longitude:</strong>
+      <%= @observation.longitude %>
+    </p>
+
+    <p>
+      <strong>Notes:</strong>
+      <%= @observation.notes %>
+    </p>
+    <% if @observation.user == current_user %>
+        <%= link_to 'Edit', edit_observation_path(@observation), class: 'card-link' %>
+        <%= link_to 'Delete', @observation, method: :delete, class: 'card-link' %>
+    <% end %>
   </div>
-  
-  <!-- <p>
-    <strong>Place:</strong>
-  </p>
-
-  <p>
-    <strong>Date:</strong>
-    <%= @observation.date %>
-  </p>
-
-  <p>
-    <strong>Time:</strong>
-    <%= Time.at(@observation.time).strftime("%H:%M") %>
-  </p> -->
-
-  <!-- <p>
-    <strong>Conditions:</strong>
-    <%= @observation.conditions %>
-  </p>
-
-  <p>
-    <strong>Sunrise:</strong>
-    <%= Time.at(@observation.sunrise).strftime("%H:%M") %>
-  </p>
-
-  <p>
-    <strong>Sunset:</strong>
-    <%= Time.at(@observation.sunset).strftime("%H:%M") %>
-  </p> -->
-
-  <p>
-    <strong>Species:</strong>
-    <%= @observation.species %>
-  </p>
-
-  <p>
-    <strong>Saw:</strong>
-    <%= @observation.saw %>
-  </p>
-
-  <p>
-    <strong>Heard:</strong>
-    <%= @observation.heard %>
-  </p>
-
-  <p>
-    <strong>Latitude:</strong>
-    <%= @observation.latitude %>
-  </p>
-
-  <p>
-    <strong>Longitude:</strong>
-    <%= @observation.longitude %>
-  </p>
-
-  <p>
-    <strong>Notes:</strong>
-    <%= @observation.notes %>
-  </p>
-
-  <%= link_to 'Edit', edit_observation_path(@observation) %> |
-  <%= link_to 'Back', observations_path %>
+  <% if @observation.image.present? %>
+    <div class = 'col-md-8'>
+      <%= image_tag @observation.image, class: 'img-fluid' %>
+    </div>
+  <% end %>
 </div>

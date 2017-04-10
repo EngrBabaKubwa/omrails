@@ -51,6 +51,6 @@ class ObservationsController < ApplicationController
   private
     # Never trust parameters from the scary internet, only allow the white list through.
     def observation_params
-      params.require(:observation).permit(:user_id, :date, :time, :conditions, :sunrise, :sunset, :species, :saw, :heard, :latitude, :longitude, :notes)
+      params.require(:observation).permit(:date, :time, :conditions, :sunrise, :sunset, :species, :saw, :heard, :latitude, :longitude, :notes, :image)
     end
 end

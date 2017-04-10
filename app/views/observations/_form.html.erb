@@ -71,5 +71,10 @@
     <%= f.text_area :notes, class: 'form-control' %>
   </div>
 
+  <div class='form-group'>
+    <%= f.label :image %>
+    <%= f.file_field :image, class: 'form-control' %>
+  </div>
+
     <%= f.submit class: 'btn btn-primary' %>
 <% end %>

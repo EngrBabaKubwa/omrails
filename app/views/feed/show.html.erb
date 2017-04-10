@@ -8,11 +8,16 @@
         </div>
     </div>
     <div class = "col-md-8">
-          <% @tweets.each do |tweet| %>
-            <%= link_to tweet, class: "card" do%>
+          <% @observations.reverse_each do |observation| %>
+            <%= link_to observation, class: "card" do %>
               <div class='card-block'>
-                <h6 class="card-title"><%= tweet.user.email %></h6>
-                <p class="card-text"><%= tweet.content %></p>
+                <h6 class="card-title"><%= observation.user.username %> // posted on: <%= observation.created_at.strftime("%m/%d/%Y") %></h6>
+                <% if observation.image.present? %>
+                  <center><%= image_tag observation.image, class: 'img-fluid' %></center>
+                <% end %>
+                <p class="card-text">observed on: <%= observation.date %></p>
+                <p class='card-text'>species: <%= observation.species %></p>
+                <p class='card-text'><%= observation.notes %></p>
               </div>
             <% end %>
           <% end %>
